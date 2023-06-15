@@ -4,4 +4,16 @@ van a pasar a la capa de datos que va a conectar con la base de datos,
 se envien de forma correcta.
 */
 
-export class CreateItemDto {}
+import { IsNotEmpty, IsNumber } from "class-validator";
+
+export class CreateItemDto {
+
+    @IsNotEmpty()
+    name: string;
+
+    @IsNumber()
+    price: number;
+    
+    @IsNotEmpty()
+    description: string;
+}
